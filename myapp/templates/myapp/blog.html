@@ -1,0 +1,14 @@
+{% extends "myapp/base.html" %}
+{% block content %}
+<h1 class="container" style='color: coral;'> Blogs </h1>
+    {% for blog in blogs %}
+    <div class="container-lg bg-light m-2 p-2" style="border: 2px solid rgb(209, 26, 26)">        
+        <h1 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;color: coral;">{{ blog.author }}</h1>
+        <p>{{ blog.blog }}</p>
+    
+        </div>
+    {% endfor %}
+  
+
+  
+  {% endblock content %}

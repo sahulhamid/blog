@@ -1,0 +1,17 @@
+{% extends "myapp/base.html" %}
+{% block content %}
+<h1 class="container" style='color: crimson;'>Your Profile</h1>
+    <form class=" container form-horizontal p-3 " enctype="multipart/form-data" method="POST" style="border: 2px solid coral;">
+        <div class="form-group ">
+            {% csrf_token %}
+            <h1 class="container" style='color: crimson;'>{{ current_user }}</h1>
+            <div class="col-sm-offset-2 col-sm-10" style="color: crimson;">
+                <img src="{{ request.user.profile.image.url }}" width="200px"
+                height="200px" class="m-3" style="border: 2px solid black;" >
+              {{ form.as_p }}
+                
+            </div>
+        </div>
+        <button type="submit" class="btn btn-warning">Update</button>
+    </form>
+{% endblock content %}

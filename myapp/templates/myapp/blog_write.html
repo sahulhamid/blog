@@ -1,0 +1,15 @@
+{% extends "myapp/base.html" %}
+{% block content %}
+<h1 class="container" style='color: crimson;'>Create your Blog</h1>
+    <form class=" container form-horizontal p-3 " method="POST" style="border: 2px solid coral;">
+      <div class="form-group">
+          {% csrf_token %}
+
+          <div class="col-sm-offset-2 col-sm-10 container-sm" style="color: crimson;">
+          <h2>Author : {{ user }}</h2>
+          {{ form.as_p }}
+          </div>
+      </div>
+      <button type="submit" class="btn btn-warning">Post</button>
+    </form>
+{% endblock content %}
